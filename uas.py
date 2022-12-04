@@ -83,10 +83,10 @@ with preprocessing:
     - min = nilai minimum semua data asli
     - max = nilai maksimum semua data asli
     """)
-    df = df.drop(columns=['City', 'COAQICategory', 'OzoneAQICategory', 'NO2AQICategory', 'PM2.5AQICategory'])
+    df = df.drop(columns=['City', 'CO AQI Category', 'Ozone AQI Category', 'NO2 AQI Category', 'PM2.5 AQI Category'])
     #Mendefinisikan Varible X dan Y
-    X = df[['Country','AQIValue','COAQIValue','OzoneAQIValue','NO2AQIValue','PM2AQIValue']]
-    y = df['AQI_Category'].values
+    X = df[['Country','AQI Value','CO AQI Value','Ozone AQI Value','NO2 AQI Value','PM2.5 AQI Value']]
+    y = df['AQI Category'].values
     df
     X
     df_min = X.min()

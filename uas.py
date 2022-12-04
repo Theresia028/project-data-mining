@@ -235,10 +235,10 @@ with modeling:
 with implementation:
     with st.form("my_form"):
         st.subheader("Implementasi")
-        Weight = st.number_input('Masukkan country (negara) : ')
-        Lenght1 = st.number_input('Masukkan AQI Value (Nilai AQI kota secara keseluruhan) : ')
-        Height = st.number_input('Masukkan CO AQI Value (Nilai AQI Karbon Monoksida kota) : ')
-        Width = st.number_input('Masukkan Ozone AQI Value (Nilai AQI Ozon kota) : ')
+        Weight = st.number_input('Masukkan berat ikan (Weight) : ')
+        Lenght1 = st.number_input('Masukkan panjang vertikal ikan (Length1) : ')
+        Height = st.number_input('Masukkan tinggi ikan (Height) : ')
+        Width = st.number_input('Masukkan lebar ikan (Width) : ')
         
         model = st.selectbox('Pilihlah model yang akan anda gunakan untuk melakukan prediksi?',
                 ('Gaussian Naive Bayes', 'K-NN', 'Decision Tree'))

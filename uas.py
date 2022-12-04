@@ -265,6 +265,7 @@ with implementation:
             if model == 'Decision Tree':
                 mod = dt
 
+               
             input_pred = mod.predict(input_norm)
 
 

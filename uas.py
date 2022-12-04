@@ -70,7 +70,7 @@ with upload_data:
     #     df = pd.read_csv(uploaded_file)
     #     st.write("Nama File Anda = ", uploaded_file.name)
     #     st.dataframe(df)
-    df = pd.read_csv('https://raw.githubusercontent.com/HambaliFitrianto/datamining/main/seattle-weather.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/08-Ahlaqul-Karimah/machine-Learning/main/global%20air%20pollution%20dataset.csv')
     st.dataframe(df)
 
 with preprocessing:
@@ -83,10 +83,10 @@ with preprocessing:
     - min = nilai minimum semua data asli
     - max = nilai maksimum semua data asli
     """)
-    df = df.drop(columns=["date"])
+    df = df.drop(columns=["date", "Ozone AQI Category", "NO2 AQI Category", "PM2.5 AQI Category"])
     #Mendefinisikan Varible X dan Y
-    X = df.drop(columns=['weather'])
-    y = df['weather'].values
+    X = df.drop(columns=['AQICategory'])
+    y = df['AQICategory'].values
     df
     X
     df_min = X.min()
@@ -105,7 +105,7 @@ with preprocessing:
     st.write(scaled_features)
 
     st.subheader('Target Label')
-    dumies = pd.get_dummies(df.weather).columns.values.tolist()
+    dumies = pd.get_dummies(df.AQICategory).columns.values.tolist()
     dumies = np.array(dumies)
 
     labels = pd.DataFrame({
@@ -236,10 +236,12 @@ with modeling:
 with implementation:
     with st.form("my_form"):
         st.subheader("Implementasi")
-        Precipitation = st.number_input('Masukkan preciptation (curah hujan) : ')
-        Temp_Max = st.number_input('Masukkan tempmax (suhu maks) : ')
-        Temp_Min = st.number_input('Masukkan tempmin (suhu min) : ')
-        Wind = st.number_input('Masukkan wind (angin) : ')
+        Country = st.number_text('Masukkan country (negara) : ')
+        AQIValue = st.number_input('Masukkan AQI Value (Nilai AQI kota secara keseluruhan) : ')
+        COAQIValue = st.number_input('Masukkan CO AQI Value (Nilai AQI Karbon Monoksida kota) : ')
+        OzoneAQIValue = st.number_input('Masukkan Ozone AQI Value (Nilai AQI Ozon kota) : ')
+        NO2AQIValue = st.number_input('Masukkan NO2 AQI Value (Nilai Nilai AQI Ozon kota) : ')
+        PM2AQIValue = st.number_input('Masukkan PM2.5 AQI Value (Nilai AQI Nitrogen Dioksida kota) : ')
         model = st.selectbox('Pilihlah model yang akan anda gunakan untuk melakukan prediksi?',
                 ('Gaussian Naive Bayes', 'K-NN', 'Decision Tree'))
 

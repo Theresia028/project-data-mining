@@ -83,7 +83,7 @@ with preprocessing:
     - min = nilai minimum semua data asli
     - max = nilai maksimum semua data asli
     """)
-    df = df.drop(columns=["date", "OzoneAQICategory", "NO2AQICategory", "PM2AQICategory"])
+    df = df.drop(columns=["City", "OzoneAQICategory", "NO2AQICategory", "PM2AQICategory"])
     #Mendefinisikan Varible X dan Y
     X = df.drop(columns=['AQICategory'])
     y = df['AQICategory'].values

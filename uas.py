@@ -236,22 +236,21 @@ with modeling:
 with implementation:
     with st.form("my_form"):
         st.subheader("Implementasi")
-        Country = st.number_text('Masukkan country (negara) : ')
-        AQIValue = st.number_input('Masukkan AQI Value (Nilai AQI kota secara keseluruhan) : ')
-        COAQIValue = st.number_input('Masukkan CO AQI Value (Nilai AQI Karbon Monoksida kota) : ')
-        OzoneAQIValue = st.number_input('Masukkan Ozone AQI Value (Nilai AQI Ozon kota) : ')
-        NO2AQIValue = st.number_input('Masukkan NO2 AQI Value (Nilai Nilai AQI Ozon kota) : ')
-        PM2AQIValue = st.number_input('Masukkan PM2.5 AQI Value (Nilai AQI Nitrogen Dioksida kota) : ')
+        Weight = st.number_text('Masukkan country (negara) : ')
+        Lenght1 = st.number_input('Masukkan AQI Value (Nilai AQI kota secara keseluruhan) : ')
+        Height = st.number_input('Masukkan CO AQI Value (Nilai AQI Karbon Monoksida kota) : ')
+        Width = st.number_input('Masukkan Ozone AQI Value (Nilai AQI Ozon kota) : ')
+        
         model = st.selectbox('Pilihlah model yang akan anda gunakan untuk melakukan prediksi?',
                 ('Gaussian Naive Bayes', 'K-NN', 'Decision Tree'))
 
         prediksi = st.form_submit_button("Submit")
         if prediksi:
             inputs = np.array([
-                Precipitation,
-                Temp_Max,
-                Temp_Min,
-                Wind
+                Weight,
+                Length1,
+                Height,
+                Width
             ])
 
             df_min = X.min()

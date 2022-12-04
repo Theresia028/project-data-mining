@@ -236,7 +236,7 @@ with implementation:
     with st.form("my_form"):
         st.subheader("Implementasi")
         Weight = st.number_input('Masukkan berat ikan (Weight) : ')
-        Lenght1 = st.number_input('Masukkan panjang vertikal ikan (Length1) : ')
+        Length1 = st.number_input('Masukkan panjang vertikal ikan (Length1) : ')
         Height = st.number_input('Masukkan tinggi ikan (Height) : ')
         Width = st.number_input('Masukkan lebar ikan (Width) : ')
         

@@ -112,8 +112,7 @@ with preprocessing:
         '1' : [dumies[0]],
         '2' : [dumies[1]],
         '3' : [dumies[2]],
-        '4' : [dumies[3]],
-        '5' : [dumies[4]]
+        
     })
 
     st.write(labels)
@@ -236,7 +235,7 @@ with modeling:
 with implementation:
     with st.form("my_form"):
         st.subheader("Implementasi")
-        Weight = st.number_text('Masukkan country (negara) : ')
+        Weight = st.number_input('Masukkan country (negara) : ')
         Lenght1 = st.number_input('Masukkan AQI Value (Nilai AQI kota secara keseluruhan) : ')
         Height = st.number_input('Masukkan CO AQI Value (Nilai AQI Karbon Monoksida kota) : ')
         Width = st.number_input('Masukkan Ozone AQI Value (Nilai AQI Ozon kota) : ')

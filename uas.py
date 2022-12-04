@@ -85,7 +85,7 @@ with preprocessing:
     """)
     df = df.drop(columns=['Length2','Length3'])
     #Mendefinisikan Varible X dan Y
-    X = df[['Weigth','Length1','Height','Width']]
+    X = df[['Weight','Length1','Height','Width']]
     y = df['Species'].values
     df
     X

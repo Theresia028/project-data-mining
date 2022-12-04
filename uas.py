@@ -70,7 +70,7 @@ with upload_data:
     #     df = pd.read_csv(uploaded_file)
     #     st.write("Nama File Anda = ", uploaded_file.name)
     #     st.dataframe(df)
-    df = pd.read_csv('https://raw.githubusercontent.com/08-Ahlaqul-Karimah/machine-Learning/main/global%20air%20pollution%20dataset.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/08-Ahlaqul-Karimah/machine-Learning/main/Fish.csv')
     st.dataframe(df)
 
 with preprocessing:
@@ -83,10 +83,10 @@ with preprocessing:
     - min = nilai minimum semua data asli
     - max = nilai maksimum semua data asli
     """)
-    df = df.drop(columns=['City', 'CO AQI Category', 'Ozone AQI Category', 'NO2 AQI Category', 'PM2.5 AQI Category'])
+    df = df.drop(columns=['Length2','Length3'])
     #Mendefinisikan Varible X dan Y
-    X = df[['Country','AQI Value','CO AQI Value','Ozone AQI Value','NO2 AQI Value','PM2.5 AQI Value']]
-    y = df['AQI Category'].values
+    X = df[['Weigth','Length1','Height','Width']]
+    y = df['Species'].values
     df
     X
     df_min = X.min()
@@ -105,7 +105,7 @@ with preprocessing:
     st.write(scaled_features)
 
     st.subheader('Target Label')
-    dumies = pd.get_dummies(df.AQICategory).columns.values.tolist()
+    dumies = pd.get_dummies(df.Species).columns.values.tolist()
     dumies = np.array(dumies)
 
     labels = pd.DataFrame({

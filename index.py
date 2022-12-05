@@ -14,35 +14,44 @@ from sklearn.tree import DecisionTreeClassifier
 # warnings.filterwarnings("ignore")
 
 
-st.title("PENAMBANGAN DATA")
-st.write("##### Nama  : Hambali Fitrianto ")
-st.write("##### Nim   : 200411100074 ")
-st.write("##### Kelas : Penambangan Data C ")
+st.title("PENAMBANGAN DATA c")
 
-data_set_description, upload_data, preprocessing, modeling, implementation = st.tabs(["Data Set Description", "Upload Data", "Preprocessing", "Modeling", "Implementation"])
+data_set_description, upload_data, preprocessing, modeling, implementation = st.tabs(["Data Set Description", "Data", "Preprocessing", "Modeling", "Implementation"])
 
 with data_set_description:
+    st.write("##### Nama  : Ahlaqul Karimah M ")
+    st.write("##### Nim   : 200411100008 ")
+    st.write("##### Kelas : Penambangan Data C ")
     st.write("""# Data Set Description """)
-    st.write("###### Data Set Ini Adalah : Weather Prediction (Prediksi Cuaca) ")
-    st.write("###### Sumber Data Set dari Kaggle : https://www.kaggle.com/datasets/ananthr1/weather-prediction")
+    st.write("###### Data Set Ini Adalah : Classification on Fish market (Klasifikasi dipasar ikan) ")
+    st.write("###### Sumber Data Set dari Kaggle : https://www.kaggle.com/code/hongsean/tutorial-knn-classification-on-fish-market/notebook")
     st.write("""###### Penjelasan setiap kolom : """)
-    st.write("""1. preciptation (curah hujan) :
-
-    Curah hujan : jumlah hujan yang turun pada suatu daerah dalam waktu tertentu. untuk menentukan besarnya curah hujan, membutuhkan suatu alat ukur. Alat pengukur curah hujan disebut dengan fluviograf dan satuan curah hujan yang biasanya digunakan adalah milimeter (mm).
+    st.write("""1. Species (Jenis ) :
+    
+    jenis :Spesies atau jenis adalah suatu peringkat taksonomi yang dipakai dalam klasifikasi biologis untuk merujuk pada satu atau beberapa kelompok individu makhluk hidup (populasi) yang serupa dan dapat saling membuahi satu sama lain di dalam kelompoknya (saling berbagi gen) sehingga menghasilkan keturunan yang fertil (subur).
+    ikan : Ikan adalah anggota vertebrata poikilotermik (berdarah dingin)[1] yang hidup di air dan bernapas dengan insang. Ikan merupakan kelompok vertebrata yang paling beraneka ragam dengan jumlah spesies lebih dari 27,000 di seluruh dunia. Secara taksonomi, ikan tergolong kelompok paraphyletic yang hubungan kekerabatannya masih diperdebatkan; biasanya ikan dibagi menjadi ikan tanpa rahang (kelas Agnatha, 75 spesies termasuk lamprey dan ikan hag), ikan bertulang rawan (kelas Chondrichthyes, 800 spesies termasuk hiu dan pari), dan sisanya tergolong ikan bertulang keras (kelas Osteichthyes).
     """)
-    st.write("""2. tempmax (suhu maks) :
+    st.write("""2. weight (Bobot) :
 
-    Suhu Maksimum : Suhu yang terbaca dari termometer maksimum di ada di dataset
+    bobot : bobot yang di ada di dataset
     """)
-    st.write("""3. tempmin (suhu min) :
+    st.write("""3. length1 (Panjang1) :
 
-    Suhu Minimum : Suhu yang terbaca dari termometer minimum di ada di dataset
+    panjang1 : panjang ikan yang ada  di dataset
     """)
-    st.write("""4. wind (angin) :
+    st.write("""4. length1 (Panjang2) :
 
-    Kecepatan angin disebabkan oleh pergerakan angin dari tekanan tinggi ke tekanan rendah, biasanya karena perubahan suhu
+    panjang2 : panjang ikan yang ada  di dataset
     """)
-    st.write("""5. weather (cuaca) :
+    st.write("""5. length2 (Panjang3) :
+
+    panjang3 : panjang ikan yang ada  di dataset
+    """)
+    st.write("""6. height (Tinggi) :
+
+    tinggi : tinggi ikan yang ada di sataset
+    """)
+    st.write("""7. width (Lrbar) :
 
     Output (keluaran)
     """)
@@ -52,7 +61,7 @@ with data_set_description:
     tempmax * tempmin
     wind
     """)
-    st.write("""Memprediksi kondisi cuaca (output) :
+    st.write("""Mengklasifikasi ikan di pasar   (output) :
 
     1. drizzle (gerimis)
     2. rain (hujan)

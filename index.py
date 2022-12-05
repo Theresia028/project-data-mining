@@ -121,6 +121,10 @@ with preprocessing:
         '1' : [dumies[0]],
         '2' : [dumies[1]],
         '3' : [dumies[2]],
+        '4' : [dumies[3]],
+        '5' : [dumies[4]],
+        '6' : [dumies[5]],
+        '7' : [dumies[6]],
         
     })
 
